@@ -13,7 +13,7 @@ def plot():
     # Makes a plot for each value of w
     for i in range(20 + 1):
         print('Plotting Plot {}'.format(i))
-        folder_name = 'csv{:0>2d}'.format(i)
+        folder_name = os.path.join('csvs', 'csv{:0>2d}'.format(i))
         fig = plt.figure()
         ax1 = fig.add_subplot(1, 1, 1, projection='3d')
         for j in range(20 + 1):

@@ -2,13 +2,15 @@
 Takes in all the 21 plots and creates a looping gif
 to see how the function changes with changing w
 """
+import os
+
 from PIL import Image
 
 def create_gif():
     # Create the frames
     FRAMES = []
     for i in range(20 + 1):
-        img = 'csv{0:0>2d}/plot{0:0>2d}.png'.format(i)
+        img = os.path.join('csvs', 'csv{:0>2d}'.format(i), 'plot{:0>2d}.png'.format(i))
         new_frame = Image.open(img)
         FRAMES.append(new_frame)
 

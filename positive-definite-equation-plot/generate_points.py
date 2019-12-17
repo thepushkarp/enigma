@@ -5,12 +5,12 @@ def generate_points():
     for i in range(-10, 10 + 1):
         # Create a folder for each value of w
         print('Generating files for w = {}'.format(i))
-        dirname = "csv{:0>2d}".format(i + 10)
+        dirname = os.path.join('csvs', 'csv{:0>2d}'.format(i + 10))
         if not os.path.exists(dirname):
             os.mkdir(dirname)
         for j in range(-10, 10 + 1):
             # Create a file for each value of x
-            filename = "{}/file{:0>2d}.csv".format(dirname, j + 10)
+            filename = os.path.join(dirname, 'file{:0>2d}.csv'.format(j + 10))
             file = open(filename, 'w+')
             for k in range(-10, 10 + 1):
                 for l in range(-10, 10 + 1):
